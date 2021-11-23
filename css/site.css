@@ -1,5 +1,5 @@
 :root{
-    --primary-color: #2738ce;
+    --primary-color: #041186;
     --secondary-color: #ff993b;
     --dark-color: rgb(64, 7, 129);
     --white-color: #e7e7e7;
@@ -62,12 +62,6 @@ main>.container {
     color: rgb(53, 53, 180);
 }
 .checklist >li i{
-    color: var(--secondary-color);
+    color: var(--green-color);
 }
 
-code[class*="language-"],
-        pre[class*="language-"] {
-            white-space: pre-wrap;
-            word-break: break-all;
-            word-wrap: break-word;
-            }
