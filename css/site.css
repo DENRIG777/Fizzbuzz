@@ -1,8 +1,9 @@
 :root{
-    --primary-color: #1d5888;
+    --primary-color: #2738ce;
     --secondary-color: #ff993b;
-    --dark-color: #292929;
+    --dark-color: rgb(64, 7, 129);
     --white-color: #e7e7e7;
+    --green-color: rgb(23, 223, 23);
 }
 body{
     color:var(--dark-color)
@@ -30,7 +31,7 @@ footer .social>a {
 }
 
 footer .social>a:hover{
-    color: var(--primary-color);
+    color: var(--green-color);
     opacity: 0.9;
 }
 main>.container {
