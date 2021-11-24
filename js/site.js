@@ -5,8 +5,8 @@ function getValues (){
     let fizzValue = document.getElementById("fizzValue").value;
     let buzzValue = document.getElementById("buzzValue").value;
     //parse for numbers
-    fizzValue = parseInt("fizzValue");
-    buzzValue = parseInt("buzzValue");
+    fizzValue = parseInt(fizzValue);
+    buzzValue = parseInt(buzzValue);
     //check that the numbers are integers
     if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)){
         
@@ -40,13 +40,35 @@ function FizzBuzz(fizzValue, buzzValue){
             returnArray.push(i);  
         }
     }
-    returnArray;
+    return returnArray;
 }
 
 //loop over the array and create a tablerow for each item.
 function displayData(fbArray){
 
-    
+    //Get the table body element from the page
+    let tableBody = document.getElementById("results");
+
+    //get the template row
+    let templateRow = document.getElementById("fbTemplate");
+
+    //clear table first
+    tableBody.innerHTML = "";
+
+     for (let index = 0; index < fbArray.length; index += 5) {
+        
+        let tableRow = document.importNode(templateRow.Content, true)
+
+        //grab the tds
+        let rowCols = tableRow.querySelectorAll("td");
+        rowCols[0].textContent = fbData[i];
+        rowCols[1].textContent = fbData[i+1];
+        rowCols[2].textContent = fbData[i+2];
+        rowCols[3].textContent = fbData[i+3];
+        rowCols[4].textContent = fbData[i+4];
+        tableBody.appendChild(tablerow);
+    }
+
 
     //add all the rows to the table.
 
