@@ -11,44 +11,42 @@ function getValues (){
     if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)){
         
         //we call fizzbuzz 
-        let fbArray = fizzBuzz(fizzValue, buzzValue);
+        let fbArray = FizzBuzz(fizzValue, buzzValue);
         //call displayData and write the values to the screen
-    
-
+        displayData(fbArray);
     } else {
         alert("you must enter integers");
     }
 }
 
-
-function fizzBuzz(fizzValue, buzzValue){
+/// do fizz buzz
+function FizzBuzz(fizzValue, buzzValue){
 
     let returnArray = [];
 
     //loop form 1 to 100        
-    for (let index = fizzValue; index < fizzValue; index++){
-    //we need check the current in three steps
-    //check to see if divisible by both (3 and 5)
-    //if so push 'FizzBuzz' into an array and not the number
-     numbers.push(index);
+    for (let i = 1; i <= 100; i++) {
+       
+        //check to see if divisible by both (3 and 5)
+        //check to see if divisible by fizz value (3)
+        //check to see if divisible by fizz value (5)
+        if(i % fizzValue ==0 && i % buzzValue == 0) {
+            returnArray.push('FizzBuzz');
+        }else if (i % fizzValue == 0) {
+            returnArray.push('Fizz');
+        }else if (i % buzzValue == 0) {
+            returnArray.push('Buzz');
+        }else{  
+            returnArray.push(i);  
+        }
     }
-
-    return returnArray;
-}
-    //check to see if divisible by fizz value (3)
-    //if so push 'Fizz' into an array and not the number
-
-    //check to see if divisible by fizz value (5)
-    //if so push 'Buzz' into an array and not the number
-
-    //if none then push the number into array
-
     returnArray;
+}
 
-
+//loop over the array and create a tablerow for each item.
 function displayData(fbArray){
 
-    //loop over the array and create a table.
+    
 
     //add all the rows to the table.
 
