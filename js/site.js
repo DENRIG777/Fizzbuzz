@@ -11,7 +11,7 @@ function getValues (){
     if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)){
         
         //we call fizzbuzz 
-        let fbArray = FizzBuzz(fizzValue, buzzValue);
+        let fbArray = FizzBuzzC(fizzValue, buzzValue);
         //call displayData and write the values to the screen
         displayData(fbArray);
     } else {
@@ -19,7 +19,7 @@ function getValues (){
     }
 }
 
-/// do fizz buzz
+/// do fizzbuzz with if statement
 function FizzBuzz(fizzValue, buzzValue){
 
     let returnArray = [];
@@ -43,6 +43,53 @@ function FizzBuzz(fizzValue, buzzValue){
     return returnArray;
 }
 
+// Do fizzbuzz with a switch statement
+function FizzBuzzB(fizzValue, buzzValue){
+
+    let returnArray = [];
+    let Fizz = false;
+    let Buzz =false;
+
+    for (let i = 1; i <= 100; i++) {
+        
+        Fizz = i % fizzValue ==0;
+        Buzz = i % buzzValue ==0;
+
+        switch(true)
+        {
+            case Fizz && Buzz:{
+                returnArray.push('FizzBuzz');
+                break;
+            }
+            case Fizz:{
+                returnArray.push('Fizz');
+                break;
+            }
+            case Buzz:{
+                returnArray.push("Buzz");
+                break;
+            }
+            default:{
+                returnArray.push(i);
+                break;
+            }
+        }
+    }
+    return returnArray;
+}
+
+// Do fizzbuzz with a ternary operator
+function FizzBuzzC(fizzValue, buzzValue){
+    let returnArray =[];
+
+    for (let i = 1; i <= 100; i++) {
+        let value = ((i % fizzValue == 0 ? 'Fizz' : '') +(i % buzzValue == 0 ?  'Buzz' :'') || i);
+        returnArray.push(value);
+    }
+    return returnArray;
+}
+
+
 //loop over the array and create a tablerow for each item.
 function displayData(fbArray){
 
@@ -57,16 +104,27 @@ function displayData(fbArray){
 
      for (let index = 0; index < fbArray.length; index += 5) {
         
-        let tableRow = document.importNode(templateRow.Content, true)
+        let tableRow = document.importNode(templateRow.content, true);
 
         //grab the tds
         let rowCols = tableRow.querySelectorAll("td");
-        rowCols[0].textContent = fbData[i];
-        rowCols[1].textContent = fbData[i+1];
-        rowCols[2].textContent = fbData[i+2];
-        rowCols[3].textContent = fbData[i+3];
-        rowCols[4].textContent = fbData[i+4];
-        tableBody.appendChild(tablerow);
+        
+        rowCols[0].classList.add(fbArray[index]);
+        rowCols[0].textContent = fbArray[index];
+
+        rowCols[1].classList.add(fbArray[index+1]);
+        rowCols[1].textContent = fbArray[index+1];
+
+        rowCols[2].classList.add(fbArray[index+2]);
+        rowCols[2].textContent = fbArray[index+2];
+
+        rowCols[3].classList.add(fbArray[index+3]);
+        rowCols[3].textContent = fbArray[index+3];
+
+        rowCols[4].classList.add(fbArray[index+4]);
+        rowCols[4].textContent = fbArray[index+4];
+        
+        tableBody.appendChild(tableRow);
     }
 
 

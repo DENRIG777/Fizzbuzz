@@ -65,3 +65,15 @@ main>.container {
     color: var(--green-color);
 }
 
+.Fizz{
+    color: brown;
+}
+
+.Buzz{
+    color: orange;
+}
+
+.FizzBuzz{
+    color: var(--green-color);
+    font-weight: bold;
+}
