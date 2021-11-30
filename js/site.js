@@ -11,7 +11,7 @@ function getValues (){
     if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)){
         
         //we call fizzbuzz 
-        let fbArray = FizzBuzzC(fizzValue, buzzValue);
+        let fbArray = FizzBuzz(fizzValue, buzzValue);
         //call displayData and write the values to the screen
         displayData(fbArray);
     } else {
@@ -19,17 +19,16 @@ function getValues (){
     }
 }
 
-/// do fizzbuzz with if statement
+//do fizzbuzz with if statement
+//calculate the Fizz, Buzz and FizzBuzz values
 function FizzBuzz(fizzValue, buzzValue){
 
     let returnArray = [];
 
-    //loop form 1 to 100        
+    //loop to find each Fizz, Buzz and FizzBuzz        
     for (let i = 1; i <= 100; i++) {
        
-        //check to see if divisible by both (3 and 5)
-        //check to see if divisible by fizz value (3)
-        //check to see if divisible by fizz value (5)
+        
         if(i % fizzValue ==0 && i % buzzValue == 0) {
             returnArray.push('FizzBuzz');
         }else if (i % fizzValue == 0) {
@@ -40,6 +39,7 @@ function FizzBuzz(fizzValue, buzzValue){
             returnArray.push(i);  
         }
     }
+    //add to array
     return returnArray;
 }
 
@@ -90,23 +90,24 @@ function FizzBuzzC(fizzValue, buzzValue){
 }
 
 
-//loop over the array and create a tablerow for each item.
+//display FizzBuzz results.
 function displayData(fbArray){
 
-    //Get the table body element from the page
+    //Get the table body element from the html
     let tableBody = document.getElementById("results");
 
-    //get the template row
+    //get the html template row to yse
     let templateRow = document.getElementById("fbTemplate");
 
-    //clear table first
+    //clear table
     tableBody.innerHTML = "";
 
+    //loop array to create an output out the array
      for (let index = 0; index < fbArray.length; index += 5) {
         
         let tableRow = document.importNode(templateRow.content, true);
 
-        //grab the tds
+        //grab the td and put it in the array
         let rowCols = tableRow.querySelectorAll("td");
         
         rowCols[0].classList.add(fbArray[index]);

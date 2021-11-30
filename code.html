@@ -51,19 +51,118 @@
     <div class="container py-5 px-5 mt-5">
         <h2 class="border-1 border-bottom border-dark">The Code for APP NAME.</h2>
         <div class="row row-cols-1 row-cols-lg-2">
-            <div class="col-lg-8">
-                <pre class="line-numbers"><code class="language-javascript">
-                    // Call Hello World
-                    function HelloWorld() {
-                        alert("hello World");
-                    }
-                </code>
-                </pre>
-            </div>
+<div class="col-lg-8">
+<pre class="line-numbers"><code class="language-javascript">
+    //get values form the user. we need to get the Fizz and the buzz value
+    function getValues (){
+    
+        //get the user values from the page
+        let fizzValue = document.getElementById("fizzValue").value;
+        let buzzValue = document.getElementById("buzzValue").value;
+        //parse for numbers
+        fizzValue = parseInt(fizzValue);
+        buzzValue = parseInt(buzzValue);
+        //check that the numbers are integers
+        if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)){
+            
+            //we call fizzbuzz 
+            let fbArray = FizzBuzz(fizzValue, buzzValue);
+            //call displayData and write the values to the screen
+            displayData(fbArray);
+        } else {
+            alert("you must enter integers");
+        }
+    }
+    
+    //calculate Fizz, Buzz and FizzBuzz.
+    function FizzBuzz(fizzValue, buzzValue){
+    
+        let returnArray = [];
+    
+        //loop to find each Fizz, Buzz and FizzBuzz        
+        for (let i = 1; i <= 100; i++) {
+           
+            
+            if(i % fizzValue ==0 && i % buzzValue == 0) {
+                returnArray.push('FizzBuzz');
+            }else if (i % fizzValue == 0) {
+                returnArray.push('Fizz');
+            }else if (i % buzzValue == 0) {
+                returnArray.push('Buzz');
+            }else{  
+                returnArray.push(i);  
+            }
+        }
+        //add to array
+        return returnArray;
+    }
+    
+    //display FizzBuzz results.
+    function displayData(fbArray){
+    
+        //Get the table body element from the html
+        let tableBody = document.getElementById("results");
+    
+        //get the html template row to yse
+        let templateRow = document.getElementById("fbTemplate");
+    
+        //clear table
+        tableBody.innerHTML = "";
+    
+        //loop array to create an output out the array
+         for (let index = 0; index < fbArray.length; index += 5) {
+            
+            let tableRow = document.importNode(templateRow.content, true);
+    
+            //grab the td and put it in the array
+            let rowCols = tableRow.querySelectorAll("td");
+            
+            rowCols[0].classList.add(fbArray[index]);
+            rowCols[0].textContent = fbArray[index];
+    
+            rowCols[1].classList.add(fbArray[index+1]);
+            rowCols[1].textContent = fbArray[index+1];
+    
+            rowCols[2].classList.add(fbArray[index+2]);
+            rowCols[2].textContent = fbArray[index+2];
+    
+            rowCols[3].classList.add(fbArray[index+3]);
+            rowCols[3].textContent = fbArray[index+3];
+    
+            rowCols[4].classList.add(fbArray[index+4]);
+            rowCols[4].textContent = fbArray[index+4];
+            
+            tableBody.appendChild(tableRow);
+        }
+    
+    
+        //add all the rows to the table.
+    
+    }
+    
+</code>
+</pre>
+</div>
             <div class="col-lg-4">
-                <P>The code is structed in one function. </P>
-                <h5>Hello world</h5>
-                <p>Hello World is a function that displays an alert with a message of "Hello World",</p>
+                <P>Fizzbuzz has three functions.  </P>
+                <h5>#1 getValues</h5>
+                <p>The function getValues grabs the values from the page that 
+                    were entered by the user for Fizz and Buzz.
+                </p>
+                <h5>#2 FizzBuzz</h5>
+                <p>The function FizzBuzz puts the two numbers as our parameters
+                    and creates an empty array at the beginning.</p>
+                
+                <p>Then we enter a for loop from 1 to 100. We used the i variable to 
+                determine if the number is the fizzValue (i % fizzValue ==0) 
+                or the buzzValue (i % buzzValue ==0) or a value of both FizzBuzz 
+                (i % fizzValue ==0 && i % buzzValue == 0) and if the variables 
+                do not match these conditions they are not marked by fizz, buzz or 
+                the FizzBuzz values</p>
+
+                <p>Thuss returning an array 1 to 100 with the values fizz, buzz and 
+                    FizzBuzz that were calculated.
+                </p>
 
             </div>
         </div>
