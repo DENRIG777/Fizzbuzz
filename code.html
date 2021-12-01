@@ -103,7 +103,7 @@
         //Get the table body element from the html
         let tableBody = document.getElementById("results");
     
-        //get the html template row to yse
+        //get the html template row to use
         let templateRow = document.getElementById("fbTemplate");
     
         //clear table
@@ -152,16 +152,34 @@
                 <h5>#2 FizzBuzz</h5>
                 <p>The function FizzBuzz puts the two numbers as our parameters
                     and creates an empty array at the beginning.</p>
-                
                 <p>Then we enter a for loop from 1 to 100. We used the i variable to 
                 determine if the number is the fizzValue (i % fizzValue ==0) 
                 or the buzzValue (i % buzzValue ==0) or a value of both FizzBuzz 
                 (i % fizzValue ==0 && i % buzzValue == 0) and if the variables 
                 do not match these conditions they are not marked by fizz, buzz or 
                 the FizzBuzz values</p>
-
                 <p>Thuss returning an array 1 to 100 with the values fizz, buzz and 
                     FizzBuzz that were calculated.
+                </p>
+                <h4>#3 displayData</h4>
+                <p>The function displayData displays the data in five columns in a 
+                    table format.
+                </p>
+                <p>We pull this off by grabbing the table body element from the html 
+                    using the id(Results). Then we grab the html template from the html
+                    using the id(fbTemplate).
+                </p>
+                <p>Then we clear off the display area</p>
+                <p>Then we create a for loop that loops over the length of the array 
+                    passing in and grabbing the table row template as an object. We then 
+                    use the css selector to get the 'td' tag and pass it in the 
+                    variable.
+                </p>
+                <p>At this point add each array item to the td tag by adding to a number 
+                    to (i) as needed for each column (+1, +2, ...)
+                </p>
+                <p>Once all the data has been added for that row, we append the table 
+                    row data to the display area until the array is completed.
                 </p>
 
             </div>

@@ -66,14 +66,14 @@ main>.container {
 }
 
 .Fizz{
-    color: rgb(20, 16, 221);
+    color: rgb(84, 131, 218);
 }
 
 .Buzz{
-    color: rgb(233, 165, 19);
+    color: rgb(239, 243, 4);
 }
 
 .FizzBuzz{
-    color: rgb(20, 150, 20);
+    color: rgb(24, 209, 64);
     font-weight: bold;
 }
