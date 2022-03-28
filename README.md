@@ -1,0 +1,3 @@
+# Fizzbuzz
+1 2 fizz 4 buzz 6 7 8 9 10 11 12 13 14 fizzbuzz...
+Live Code https://fizzin.netlify.app
